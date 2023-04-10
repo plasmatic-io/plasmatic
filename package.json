@@ -20,7 +20,8 @@
     "build": "tsc && vite build",
     "build:watch": "tsc && vite build --watch",
     "build-storybook": "storybook build",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "chromatic": "npx chromatic"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -40,6 +41,7 @@
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/parser": "^5.57.1",
     "@vitejs/plugin-react-swc": "^3.0.0",
+    "chromatic": "^6.17.3",
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-react": "^7.32.2",
@@ -61,5 +63,7 @@
       "prettier --write",
       "eslint --cache --fix"
     ]
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "@plasmatic/ui@0.0.0"
 }
