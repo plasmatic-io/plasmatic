@@ -18,13 +18,13 @@
     "dist"
   ],
   "scripts": {
-    "dev": "concurrently \"pnpm run build-storybook:css:watch\" \"storybook dev -p 3000\"",
+    "dev": "concurrently \"pnpm run build-storybook:css:watch\" \"storybook dev -p 6006\"",
     "lint": "ESLINT_USE_FLAT_CONFIG=true eslint src/**/**/*.{ts,tsx} && prettier --check src/**/**/*.{ts,tsx}",
     "format": "prettier --write src/**/**/*.{ts,tsx} && ESLINT_USE_FLAT_CONFIG=true eslint src/**/**/*.{ts,tsx} --fix",
     "build": "tsc && vite build && pnpm run build:css",
     "build:css": "tailwindcss -m -i ./src/tailwind.css -o ./dist/styles.css",
     "build:css:watch": "tailwindcss -w -i ./src/tailwind.css -o ./dist/styles.css",
-    "build:watch": "tsc && vite build --watch",
+    "build:watch": "tsc && concurrently \"pnpm run build:css:watch\" \"vite build --watch\"",
     "build-storybook": "pnpm run build-storybook:css && storybook build",
     "build-storybook:css": "tailwindcss -i ./src/tailwind.css -o ./src/index.css",
     "build-storybook:css:watch": "tailwindcss -w -i ./src/tailwind.css -o ./src/index.css",
