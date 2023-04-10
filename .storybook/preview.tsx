@@ -1,8 +1,12 @@
 import type { Preview } from '@storybook/react'
+import { ThemeProvider } from '../src/components/ThemeProvider'
 import '../src/index.css'
+
+import React from 'react'
 
 const preview: Preview = {
   parameters: {
+    layout: 'centered',
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
@@ -11,6 +15,13 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <ThemeProvider>
+        <Story />
+      </ThemeProvider>
+    ),
+  ],
 }
 
 export default preview

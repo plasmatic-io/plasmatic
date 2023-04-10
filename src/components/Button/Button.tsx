@@ -4,7 +4,7 @@ export interface ButtonProps {
 
 export const Button = (props: ButtonProps): JSX.Element => {
   return (
-    <button className="rounded-lg bg-black  p-4 text-white">
+    <button className="rounded-lg bg-primary p-4 text-white">
       {props.primary ? 'Primary' : 'Secondary'}
     </button>
   )

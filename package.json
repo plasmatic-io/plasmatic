@@ -44,6 +44,7 @@
     "@storybook/react": "^7.0.2",
     "@storybook/react-vite": "^7.0.2",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "@types/color": "^3.0.3",
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
@@ -79,5 +80,8 @@
     ]
   },
   "readme": "ERROR: No README data found!",
-  "_id": "@plasmatic/ui@0.0.0"
+  "_id": "@plasmatic/ui@0.0.0",
+  "dependencies": {
+    "color": "^4.2.3"
+  }
 }
