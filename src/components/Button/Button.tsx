@@ -1,9 +1,9 @@
 export interface ButtonProps {
-  primary?: boolean;
+  primary?: boolean
 }
 
 export const Button = (props: ButtonProps): JSX.Element => {
-  return <div>{props.primary ? "Primary" : "Secondary"}</div>;
-};
+  return <button>{props.primary ? 'Primary' : 'Secondary'}</button>
+}
 
-export default Button;
+export default Button
