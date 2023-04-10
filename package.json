@@ -19,7 +19,8 @@
     "format": "prettier --write src/**/**/*.{ts,tsx} && ESLINT_USE_FLAT_CONFIG=true eslint src/**/**/*.{ts,tsx} --fix",
     "build": "tsc && vite build",
     "build:watch": "tsc && vite build --watch",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "husky install"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -42,6 +43,8 @@
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.1",
     "path": "^0.12.7",
     "prettier": "^2.8.7",
     "prop-types": "^15.8.1",
@@ -52,5 +55,11 @@
     "vite": "^4.2.0",
     "vite-plugin-dts": "^2.2.0",
     "vite-tsconfig-paths": "^4.0.8"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,yaml,yml,mdx}": [
+      "prettier --write",
+      "eslint --cache --fix"
+    ]
   }
 }
