@@ -3,7 +3,11 @@ export interface ButtonProps {
 }
 
 export const Button = (props: ButtonProps): JSX.Element => {
-  return <button>{props.primary ? 'Primary' : 'Secondary'}</button>
+  return (
+    <button className="bg-black text-white p-4 rounded-lg">
+      {props.primary ? 'Primary' : 'Secondary'}
+    </button>
+  )
 }
 
 export default Button
