@@ -83,6 +83,7 @@
   "readme": "ERROR: No README data found!",
   "_id": "@plasmatic/ui@0.0.0",
   "dependencies": {
-    "color": "^4.2.3"
+    "color": "^4.2.3",
+    "deepmerge": "^4.3.1"
   }
 }

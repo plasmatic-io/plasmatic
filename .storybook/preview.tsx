@@ -4,7 +4,31 @@ import '../src/index.css'
 
 import React from 'react'
 
+const THEMES = {
+  Default: {},
+  WN: {
+    colors: {
+      primary: '#782990',
+    },
+  },
+}
 const preview: Preview = {
+  globalTypes: {
+    theme: {
+      name: 'Theme',
+      description: 'Global theme for components',
+      defaultValue: 'Default',
+      toolbar: {
+        icon: 'circlehollow',
+        // Array of plain string values or MenuItem shape (see below)
+        items: ['Default', 'WN'],
+        // Property that specifies if the name of the item will be displayed
+        showName: true,
+        // Change title based on selected value
+        dynamicTitle: true,
+      },
+    },
+  },
   parameters: {
     layout: 'centered',
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -16,11 +40,14 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story) => (
-      <ThemeProvider>
-        <Story />
-      </ThemeProvider>
-    ),
+    (Story, context) => {
+      const theme = THEMES[context.globals.theme]
+      return (
+        <ThemeProvider theme={theme}>
+          <Story />
+        </ThemeProvider>
+      )
+    },
   ],
 }
 
