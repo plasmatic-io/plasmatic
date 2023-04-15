@@ -26,3 +26,4 @@ storybook-static
 .eslintcache
 *vite.config*timestamp*
 src/index.css
+.envrc
